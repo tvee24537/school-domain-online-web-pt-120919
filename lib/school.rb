@@ -7,16 +7,14 @@ class School
     @roster = {}
   end 
   
-  def add_student(student, level)
-    # this sort of means #=> a || a = b ... or #=> x || x = y
-    # it's freak'n weird
-    roster[level] ||= []
-    roster[level] << student
+  def add_student(student, grade)
+    roster[grade] ||= []
+    roster[grade] << student
   end 
   
-  def grade(level)
+  def grades(grade)
     roster.detect do |x, y| 
-      if x == level
+      if x == grade
         return y 
       end 
     end 
